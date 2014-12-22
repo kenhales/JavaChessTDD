@@ -1,13 +1,17 @@
 package Game;
 
 public class Board {
-	private Piece[][] pieces = new Piece[8][8];
 	
-	public void addPiece(Piece piece, int xCoordinate, int yCoordinate) {
-		pieces[xCoordinate][yCoordinate] = piece;
+	public static int BoardColumns = 8;
+	public static int BoardRows = 8;
+	
+	private Piece[][] pieces = new Piece[BoardColumns][BoardRows];
+	
+	public void addPiece(Piece piece, BoardCoordinate coordinate) {
+		pieces[coordinate.getXCoordinate()][coordinate.getYCoordinate()] = piece;
 	}
 	
-	public Piece getPiece(int xCoordinate, int yCoordinate) {
-		return pieces[xCoordinate][yCoordinate];
+	public Piece getPiece(BoardCoordinate coordinate) {
+		return pieces[coordinate.getXCoordinate()][coordinate.getYCoordinate()];
 	}
 }
